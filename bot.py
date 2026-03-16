@@ -22,7 +22,7 @@ def handle_message(update, context):
                 balance += amount
                 update.message.reply_text(f"Total Balance: ${balance}")
 
-updater = Updater(TOKEN, use_context=True)
+updater = Updater(TOKEN)
 dp = updater.dispatcher
 
 dp.add_handler(MessageHandler(filters.Text, handle_message))
