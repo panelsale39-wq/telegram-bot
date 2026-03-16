@@ -4,7 +4,7 @@ except:
     pass
 
 import telegram
-from telegram.ext import Updater, MessageHandler, Filters
+from telegram.ext import Updater, MessageHandler, filters
 
 TOKEN = "8690887958:AAEHfy8T9gH1Tc4sQnI1MDvbr8zo2oXMjfc"
 
@@ -25,7 +25,7 @@ def handle_message(update, context):
 updater = Updater(TOKEN, use_context=True)
 dp = updater.dispatcher
 
-dp.add_handler(MessageHandler(Filters.text, handle_message))
+dp.add_handler(MessageHandler(filters.Text, handle_message))
 
 updater.start_polling()
 updater.idle()
