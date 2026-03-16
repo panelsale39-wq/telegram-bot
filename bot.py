@@ -1,3 +1,4 @@
+import imghdr
 import telegram
 from telegram.ext import Updater, MessageHandler, Filters
 
