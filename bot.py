@@ -4,7 +4,7 @@ except:
     pass
 
 import telegram
-from telegram.ext import Updater, MessageHandler, filters
+from telegram.ext import Updater, MessageHandler, Filters
 
 TOKEN = "8690887958:AAEHfy8T9gH1Tc4sQnI1MDvbr8zo2oXMjfc"
 
