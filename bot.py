@@ -1,4 +1,8 @@
-import imghdr
+try:
+    import imghdr
+except:
+    pass
+
 import telegram
 from telegram.ext import Updater, MessageHandler, Filters
 
