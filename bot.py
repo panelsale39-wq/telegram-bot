@@ -1,31 +1,16 @@
-try:
-    import imghdr
-except:
-    pass
-
 import telegram
-from telegram.ext import Updater, MessageHandler, Filters
+from telegram.ext import Updater, MessageHandler, filters
 
 TOKEN = "8690887958:AAEHfy8T9gH1Tc4sQnI1MDvbr8zo2oXMjfc"
 
-balance = 0
-
-def handle_message(update, context):
-    global balance
+def reply(update, context):
     text = update.message.text
-    
-    if "received" in text.lower():
-        words = text.split()
-        for w in words:
-            if w.replace("$","").isdigit():
-                amount = int(w.replace("$",""))
-                balance += amount
-                update.message.reply_text(f"Total Balance: ${balance}")
+    update.message.reply_text("Aap ne likha: " + text)
 
 updater = Updater(TOKEN)
-dp = updater.dispatcher
 
-dp.add_handler(MessageHandler(filters.Text, handle_message))
+dp = updater.dispatcher
+dp.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, reply))
 
 updater.start_polling()
 updater.idle()
